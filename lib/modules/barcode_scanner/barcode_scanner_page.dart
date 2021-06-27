@@ -3,6 +3,7 @@ import 'package:payflow/shared/themes/app_text_styles.dart';
 import 'package:payflow/shared/themes/appcolors.dart';
 import 'package:payflow/widgets/divider_vertical/divider_vertical_widget.dart';
 import 'package:payflow/widgets/label_button/label_button.dart';
+import 'package:payflow/widgets/set_label_buttons/set_label_buttons.dart';
 
 class BarcodeScannerPage extends StatefulWidget {
   BarcodeScannerPage({Key? key}) : super(key: key);
@@ -45,14 +46,11 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
           ),
         ],
       ),
-      bottomNavigationBar: Container(
-        height: 56,
-        child: Row(
-          children: [
-            Expanded(child: LabelButton( label: "Inserir Código do Boleto", onPressed: () {},)),
-            DividerVerticalWidget(),
-            Expanded(child: LabelButton( label: "Adicionar da galeria", onPressed: () {}, )),
-          ],),
+      bottomNavigationBar: SetLabelButtons(
+        primaryLabel: "Inserir código de barras",
+        primaryOnPressed: () {},
+        secondLabel: "Digitar a linha digitável",
+        secondOnPressed: () {},
       ),
     );
   }
